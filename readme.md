@@ -7,6 +7,8 @@
   - [Vscode](#vscode)
 - [Git](#git-usages)
 - [Node](#node)
+  - [Node Install](#node-install)
+  - [Node Packages](#node-packages)
 - [Vue](#vue)
   - [Vue Cli](#vue-cli)
 - [Linux](#linux)
@@ -89,11 +91,19 @@ git push origin :old-name new-name
 
 git push origin -u new-name
 
+# update git version
+
+yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
+
+yum install git 
+
+git --verison
+
 ```
 
 ### Node
 
-#### install
+#### Node Install
 ```SH
 # CentOS 7
 # node 12 LTS
@@ -111,7 +121,7 @@ export PATH=$PATH:/home/paul.xiao/npm_global/bin/
 
 ```
 
-#### Packages
+#### Node Packages
 > nodejs authentication
 - passport.js
 - jwt
@@ -151,7 +161,7 @@ nodemon --inspect
 ##### nodejs-dashborad
 > Determine in realtime what's happening inside your node process from the terminal. No need to instrument code to get the deets. Also splits stderr/stdout to help spot errors sooner.
 
-```
+```bash
 # simply require in dev.index.js
 require("nodejs-dashboard");
 require("./index");
