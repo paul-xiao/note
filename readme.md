@@ -1,79 +1,51 @@
-## install package
-
-- github download packages --> mv /home/paul.xiao/.config/sublime-text-3/Packages/
+# Daily Notes
 
 
-## nginx
+## Table of content
+- [Nginx](#nginx)
+- [Tools](#tools)
+  - [Vscode](#vscode)
+- [Git](#git-usages)
+- [Node](#node)
+- [Vue](#vue)
+  - [Vue Cli](#vue-cli)
+
+--------------
+
+### Tools
+#### Vscode
+
+
+### Nginx
 
 - sudo systemctl start nginx
 - root directory :usr/share/nginx/html
 - sudo ./nginx -t
 
 
-## setup local dev enviroment
-
-- 
-
-## dojo
-- declare
-- engine
-- this.inherited(arguments) 
+### Git Usages
 
 ```bash
-  Superclass constructors are always called automatically, 
-  and always before the subclass constructor. This convention 
-  reduces boilerplate in 90% of cases. If it doesn’t fit your 
-  needs see Manual Constructor Chaining below. For all other 
-  methods, use this.inherited(arguments) to call the superclass method of the same name.
+# check config
+git config --list
 
+# set global user info 
+git config --global user.email
+git config --global user.name
 
+# stash
+git stash
+git stash list
+git stash apply
+git stash drop
 
-  Because both methods are critical to the templating process, 
-  if you override either of these methods in your custom code — 
-  make sure that you include a call to the parent version by adding 
-  this.inherited(arguments) in your overridden method. See the 
-  Understanding _WidgetBase Tutorial for more information on the widget lifecycle.
+# reset commit
+git commit --amend
+git reset --hard COMMIT
 
-
-```
-- templateString        //    a string representing the HTML of the template
-- Lifecycle
-  - 
-
-
-
-## nls  --> National Language Support
-
-
-## work precess
-
-
-## git 
-
-
-- git config --list
-- git checkout -b branchname   //J265 
-- git commit refs #AGN-265 comments
-- git push origin J265
-- merge request in gitlab
-- git pull  //update
-- git checkout dev
-- git merge J265
-- git push
-
-- git stash
-- git stash list
-- git stash apply
-- git stash drop
-- git commit --amend
-- git reset --hard COMMIT
-
-- update branch
-  - git branch --set-upstream-to=origin/master J323  // tracking information
-  - git pull
-
-```bash
-
+# update branch
+git branch --set-upstream-to=origin/master J323  // tracking information
+git pull
 #Rename your local branch.
 #If you are on the branch you want to rename:
 
@@ -94,28 +66,35 @@ git push origin -u new-name
 
 ```
 
-## vue 
+### Node
 
-```java
+#### install
+```SH
+# CentOS 7
+# node 12 LTS
+sudo yum -y update
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
+sudo yum clean all && sudo yum makecache fast
+sudo yum install -y gcc-c++ make
+sudo yum install -y nodejs
+node -v
+npm -v
+# npm config
+npm config list
+npm config set prefix '~/.npm_global'
+export PATH=$PATH:/home/paul.xiao/npm_global/bin/  
 
-- this.$store.dispatch('GET_USER_INFO')  // call actions
+```
 
-- how to put loading bar in each route  //api.js
+### Vue 
 
-- components html style    // outo convert to a-b , binding to tpl name
+#### tricks
+```bash
+# 拼接字符串 
+:ref="`contact_key_${key}`"  
 
-- mapGetters
- - mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：
-
-- vue-i18n
- - $t('upload.create_tp')
-
-- Object.assign函数的使用
- - 使用该函数我们可以快速的复制一个或者多个对象到目标对象中
-
-> 拼接字符串 :ref="`contact_key_${key}`"  
-
-> $event 来获取到组件内部传递出来的第一个参数
+# 获取到组件内部传递出来的第一个参数
+$event
 
 ```
 #### vue-cli
@@ -129,9 +108,7 @@ vue create
 
 ```
 ## npm
- - npm config list
- - npm config set prefix '/home/paul.xiao/npm_global'
- - export PATH=$PATH:/home/paul.xiao/npm_global/bin/  
+
 
 
 ## notes
