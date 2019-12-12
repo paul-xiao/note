@@ -9,12 +9,37 @@
 - [Node](#node)
 - [Vue](#vue)
   - [Vue Cli](#vue-cli)
+- [Linux](#linux)
+- [ES6](#es6)
+- [MongoDB](#mongodb)
+- [Web Hacks](#web-hacks)
+- [Docker](#docker)
 
 --------------
 
 ### Tools
-#### Vscode
 
+#### Vscode
+- Extensions
+> JSHint, a tool that helps to detect errors and potential
+  problems in your JavaScript code.
+
+```bash
+#  config es6 in .jshintrc
+
+{
+	"node": true,
+	"sub": true,
+	"esversion": 6, //specify the ECMAScript version
+	"globals": {
+		"require": true,
+		"module": true
+	}
+}
+
+# 自动检查代码
+
+```  
 
 ### Nginx
 
@@ -86,105 +111,13 @@ export PATH=$PATH:/home/paul.xiao/npm_global/bin/
 
 ```
 
-### Vue 
-
-#### tricks
-```bash
-# 拼接字符串 
-:ref="`contact_key_${key}`"  
-
-# 获取到组件内部传递出来的第一个参数
-$event
-
-```
-#### vue-cli
-```bash
-# install
-sudo npm install -g @vue/cli
-vue --version
-
-# crate 
-vue create
-
-```
-## npm
-
-
-
-## notes
- - encodeURIComponent 
-
-
-
-
-## tar.gz和tar.bz2解压命令
-
-```bash
-#解压tar.gz命令是
-tar -zxvf xx.tar.gz
-#解压tar.bz2的命令是
-tar -jxvf xx.tar.bz2
-
-```
-
-
-## [ES6](https://www.w3schools.com/js/js_es6.asp)
-> let,const
-> Array.find()
-  - The find() method returns the value of the first array element that passes a test function.
-
-> New Global Methods
-  - isFinite()
-  - isNaN()
-
-> Arrow Functions
-
-```c
-
-// ES5
-var x = function(x, y) {
-   return x * y;
-}
-
-// ES6
-const x = (x, y) => x * y;
-
-
-``` 
-
-
-## alsamixer 
-
-## mongoDB 
-> [installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)
-- Usage
-  - service mongod status | start | stop
-
-
-## web hacks
-> image 
-
-
-
-## docker
-
-> install 
-
-```
-
-
-
-```
-
-
-
-## node js package usage
+#### Packages
 > nodejs authentication
 - passport.js
 - jwt
 - bcrypt
 
-#### [cross-env](https://www.npmjs.com/package/cross-env)
+##### [cross-env](https://www.npmjs.com/package/cross-env)
 > Run scripts that set and use environment variables across platforms
 ```bash
 # package.json
@@ -194,7 +127,7 @@ const x = (x, y) => x * y;
   }
 }
 ```
-#### [nodemon](https://github.com/remy/nodemon#nodemon)
+##### [nodemon](https://github.com/remy/nodemon#nodemon)
 > nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 ```bash
@@ -215,7 +148,7 @@ nodemon --inspect
 ```
 
 
-#### nodejs-dashborad
+##### nodejs-dashborad
 > Determine in realtime what's happening inside your node process from the terminal. No need to instrument code to get the deets. Also splits stderr/stdout to help spot errors sooner.
 
 ```
@@ -234,44 +167,20 @@ nodejs-dashboard -- node -r nodejs-dashboard index.js
 
 ```
 
-#### node-drawille
+##### node-drawille
 > drawing in terminal with unicode braille characters
 
 
-#### webpack-dev-middleware
+##### webpack-dev-middleware
 > An express-style development middleware for use with webpack bundles and allows for serving of the files emitted from webpack. This should be used for development only.
 
-#### helmet  
+##### helmet  
 > Helmet helps you secure your Express apps by setting various HTTP headers
 
-
-
-## run time config
-
-#### jshint
-> JSHint, a tool that helps to detect errors and potential
-  problems in your JavaScript code.
-```
-#  config es6 in .jshintrc
-
-{
-	"node": true,
-	"sub": true,
-	"esversion": 6, //specify the ECMAScript version
-	"globals": {
-		"require": true,
-		"module": true
-	}
-}
-
-# 自动检查代码
-
-```  
-
-#### chalk
+##### chalk
 > Terminal string styling
 
-#### pug
+##### pug
 > Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers
 ```pug
 doctype html
@@ -293,163 +202,72 @@ html(lang="en")
 ```
 
 
+### Vue 
 
+#### tricks
+```bash
+# 拼接字符串 
+:ref="`contact_key_${key}`"  
 
+# 获取到组件内部传递出来的第一个参数
+$event
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--------------------------------------------------------
-
-## markdown useage
-# 锚点
-# 一级标题
-## 二级标题
-#### 三级标题
-##### 四级标题
-###### 五级标题
-######## 六级标题
-# 引用
-> 这是第一级引用。
->
-> > 这是第二级引用。
->
-> 现在回到第一级引用。
-
-# 有序列表：使用数字接着一个英文句点
-1. Red
-2. Green
-3. Blue
-
-# 无序列表：使用星号、加号或是减号作为列表标记
-- Red
-- Green
-- Blue
-- [ ] 不勾选
-- [x] 勾选
-
-
-# codes
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
 ```
-# 强调
-*Coding，让开发更简单*
-_Coding，让开发更简单_
+#### vue-cli
+```bash
+# install
+sudo npm install -g @vue/cli
+vue --version
 
-# 自动链接
-[超强大的云开发平台Coding](http://coding.net)
+# crate 
+vue create
 
-# 表格
-First Header | Second Header | Third Header
------------- | ------------- | ------------
-Content Cell | Content Cell  | Content Cell
-Content Cell | Content Cell  | Content 
-
-# 分割线
-这是分隔线上部分内容
----
-这是分隔线上部分内容
-
-# 图片
-- Markdown 使用了类似链接的语法来插入图片, 包含两种形式: 内联 和 引用.
-- 内联图片语法如下:
-![Alt text](/path/to/img.jpg)
-或
-![Alt text](/path/to/img.jpg "Optional title")
-
-- 引用图片语法如下
-
-[id]: url/to/image "Optional title attribute"
-![Alt text][id]
-
-# 流程图
-
-```graph
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->E;
-    E-->F;
-    D-->F;
-    F-->G;
-```
-# 时序图
-
-```graph
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->John: Hello John, how are you?
-    loop Healthcheck
-        John->John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts 
-prevail...
-    John-->Alice: Great!
-    John->Bob: How about you?
-    Bob-->John: Jolly good!
-```
-# 甘特图
-
-```graph
-gantt
-        dateFormat  YYYY-MM-DD
-        title Adding GANTT diagram functionality to mermaid
-        section A section
-        Completed task            :done,    des1, 2014-01-06,2014-01-08
-        Active task               :active,  des2, 2014-01-09, 3d
-        Future task               :         des3, after des2, 5d
-        Future task2               :         des4, after des3, 5d
-        section Critical tasks
-        Completed task in the critical line :crit, done, 2014-01-06,24h
-        Implement parser and jison          :crit, done, after des1, 2d
-        Create tests for parser             :crit, active, 3d
-        Future task in critical line        :crit, 5d
-        Create tests for renderer           :2d
-        Add to mermaid                      :1d
 ```
 
+### Linux
+
+```bash
+# unzip tar.gz
+tar -zxvf xx.tar.gz
+# unzip tar.bz2
+tar -jxvf xx.tar.bz2
+
+# alsamixer
+# alsamixer is a graphical mixer program for the Advanced Linux Sound Architecture (ALSA) that is used to configure sound settings and adjust the volume.
+```
+
+
+### [ES6](https://www.w3schools.com/js/js_es6.asp)
+
+```js
+
+// New Global Methods
+  - isFinite()
+  - isNaN()
+
+// symbol
+
+// proxy
+
+// set/weekSet ...
+
+
+``` 
+
+
+### MongoDB 
+> [installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)
+- Usage
+  - service mongod status | start | stop
+
+
+### Web Hacks
+> image 
+
+
+
+### Docker
+
+> install 
+
+```
