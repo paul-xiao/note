@@ -108,7 +108,7 @@ touch .vscode/settings.json
 
 #### proxychains-ng
 
-````sh
+```sh
 # source 
 git clone https://github.com/rofl0r/proxychains-ng
 
@@ -117,7 +117,6 @@ git clone https://github.com/rofl0r/proxychains-ng
 make
 make install
 make install-config
-
 ```
 
 #### iptables
