@@ -56,6 +56,7 @@ $ sudo yum autoremove -y
 #### Vscode
 - Optimize
 > Visual Studio Code is unable to watch for file changes in this large workspace" (error ENOSPC)
+
 ```sh
 # check max_user_watches
 cat /proc/sys/fs/inotify/max_user_watches
